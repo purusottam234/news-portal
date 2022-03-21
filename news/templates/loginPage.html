@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>NewsPortal - Login</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href = "{% static 'css/design_login.css' %}">
+		<script type="text/javascript">
+					function credentialcheck()
+					{
+						var list1="{{personObject}}"
+						var newlist1 = list1.replace(/&quot;/g, "\"");
+						newdict = JSON.parse(newlist1)
+						const dict_keys  =Object.keys(newdict)
+						var username = document.getElementById("username").value
+						var password = document.getElementById("password").value
+						var flag = false;
+						for(var i in dict_keys){
+							if(dict_keys[i]==username){
+								if(newdict[dict_keys[i]]==password){
+									alert("Logged In Succesfully")
+									flag =true
+									break
+								}
+							}
+						}
+						if(!flag){
+							alert("Wrong Password")
+						}
+						if (flag)
+        			window.location.href="home";
+    				else
+        			window.location.href= "";
+    				return false;
+					}
+				</script>
+	<body>
+		<div class="loginbox">
+		<img src="/media/user_icon.jpg" class="avatar">
+		<h1>Login To NewsPortal</h1>
+		<form method="get" name="loginForm" id="loginForm" onSubmit="return credentialcheck();" action="">
+			<p>Username</p>
+			<input type="text" id ="username" name="" placeholder="Enter Username">
+			<p>Password</p>
+			<input type="password" name="" id="password" placeholder="Enter Password">
+			<input type="submit" class="submit" value="SUBMIT">
+		</form>
+		<a>Forgot Your Password</a><br>
+		<a href="registration">New User? Sign Up Here!</a><br>
+	</div>
+	</body>
+</head>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+
+<h1 class="text-center" >Search Results</h1>
+<hr>
+<br>
+{% for result in results %}
+<div class="center">
+  
+<div id="content" class="container">
+<div class="panel panel-default">
+<div class="panel-body">
+	{% comment %} <h6 class="nomargin"> 
+		About 1,280 results <small class="text-success">(0.45 seconds) </small>
+	</h6> {% endcomment %}
+	<hr class="nomargin-bottom margin-top-10">
+	<!-- SEARCH RESULTS -->
+	<div class="clearfix search-result"><!-- item -->
+		<h4><a href="{% url 'detail' result.id %}">{{result.title}}</a></h4>
+		{% comment %} <small class="text-success">www.stepofweb.com/</small> {% endcomment %}
+		<p>{{result.description|truncatewords:20}}</p>
+	</div><!-- /item -->
+	</div>
+<br>
+<br>
+</div>
+</div>
+	{% endfor %}
+
+ 
+
+{% endblock content %}

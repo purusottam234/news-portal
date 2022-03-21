@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'title' %}signUp{% endblock %}
+{% block content %}
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col md-6 col md-offset-3">
+             {% include 'message.html'  %}
+            <form method="post" >
+            {% csrf_token %}
+                <div class="input:group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="username">
+                </div>
+
+                 <div class="input:group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <br>
+                <input type="hidden" name="next" value="{{ request.GET.next }}" />
+
+                
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+{% endblock %}

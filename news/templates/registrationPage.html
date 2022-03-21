@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Registration-NewsPortal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/design_registration.css' %}">
+
+    <script type="text/javascript">
+					function validationcheck()
+					{
+						var list1="{{validator}}"
+            var newlist1 = list1.replace(/&quot;/g, "\"");
+            newdict = JSON.parse(newlist1)
+            if(newdict["variable"]=="0"){
+              alert("Registration Succesfully")
+            }
+            else {
+              alert("Email ID already exists")
+            }
+					}
+				</script>
+  </head>
+  <body align ="center">
+        <h3>Welcome to NewsPortal</h3>
+        <p>Get Updated News Short and Crisp to the Point</p>
+        <button type="button" class="btn btn-primary" name="button">Know More</button>
+        <div class="w3-container w3-blue">
+            <h2>Register To NewsPortal</h2>
+          </div>
+        <form action="" method="post" class="w3-container">{% csrf_token %}
+        <input type="text" class="w3-input" name = "name" placeholder="Username"><br><br>
+        <input type="text" class="w3-input"id="emailID" name = "email" placeholder="Email"><br><br>
+        <input type="text" class="w3-input" name = "phonenumber" placeholder="PhoneNumber"><br><br>
+        <input type="text" name = "password" placeholder="Password"><br><br>
+        <input type="submit" name="submit1" onclick="validationcheck()" name="button">
+      </form>
+  </body>
+</html>

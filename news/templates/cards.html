@@ -1,0 +1,97 @@
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+
+<title>
+</title>
+{% load static %}
+<link rel="stylesheet" href="{% static '/css/cardscss.css' %}">
+<script type="text/javascript">
+  function next(){
+    window.location.href="homePage.html"
+  }
+</script>
+</head>
+<body style="background-color:#ffffff;" background="/media/background.JPG">
+  <h2 align="center">Choose Your Preferences from the listed topics below</h2>
+  <div class="grid-two imageandtext">
+    <div class="imageandtext image_grid">
+      <label>
+        <img src="/media/entertaiment.jpg" class="img-thumbnail" style="width:209px height:299px">
+        <input type="checkbox" name="entertaiment">
+        <span class="caption">
+        </span>
+      </label>
+    </div>
+
+    <div class="imageandtext image_grid">
+      <label>
+        <img src="/media/technology.jpg" class="img-thumbnail" width="350px" height="380px">
+        <input type="checkbox" name="selimg2">
+        <span class="caption">
+        </span>
+      </label>
+    </div>
+
+    <div class="imageandtext image_grid">
+      <label>
+        <img src="/media/business.jpg" class="img-thumbnail" width="350px" height="380px">
+        <input type="checkbox" name="selimg2">
+        <span class="caption">
+        </span>
+      </label>
+    </div>
+
+    <div class="imageandtext image_grid">
+      <label>
+        <img src="/media/sports.png" class="img-thumbnail" width="350px" height="380px">
+        <input type="checkbox" name="selimg1">
+        <span class="caption">
+        </span>
+      </label>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!--<form action="" style="float:right;" method= "post">{% csrf_token %}-->
+      <button class="button" href="homePage.html" onclick="next()"><span>Submit </span></button>
+    <div class="imageandtext image_grid">
+      <label>
+        <img src="/media/politics.jpg" class="img-thumbnail" width="350px" height="380px">
+        <input type="checkbox" name="selimg2">
+        <span class="caption">
+        </span>
+      </label>
+    </div>
+
+    <div class="imageandtext image_grid">
+      <label>
+        <img src="/media/health.jpg" class="img-thumbnail" width="350px" height="380px">
+        <input type="checkbox" name="selimg2">
+        <span class="caption">
+        </span>
+      </label>
+    </div>
+
+    <div class="imageandtext image_grid">
+      <label>
+        <img src="/media/international.png" class="img-thumbnail" width="350px" height="380px">
+        <input type="checkbox" name="selimg2">
+        <span class="caption">
+        </span>
+      </label>
+    </div>
+
+    <div class="imageandtext image_grid">
+      <label>
+        <img src="/media/science.jpg" class="img-thumbnail" width="350px" height="380px">
+        <input type="checkbox" name="selimg2">
+        <span class="caption">
+        </span>
+      </label>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<!-- International , Fashion , educational -->
