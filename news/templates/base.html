@@ -28,6 +28,12 @@
             <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
             <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">  
+            <style>
+    .mydivstyle:hover {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+        transform: translateY(-20px);
+    }
+</style>
    </head>
 
    <body>
@@ -82,7 +88,7 @@
                                             
                                             <li><a href="{% url 'home' %}"> News</a></li>
                                            <li><a href="{% url 'about' %}">About</a></li> 
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="{% url 'contact' %}">Contact</a></li>
 
                                 {% if request.user.is_authenticated %}             
 									<li><a href="{% url 'signout' %}"><i class="fa fa-sign-out"></i> logout</a></li>
