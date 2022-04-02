@@ -75,7 +75,7 @@ def signout(request):
 
 # @login_required(login_url='signin')
 def home(request):
-    if not request.user.is_staff:
+    if not request.user.is_active:
         return redirect('signin')
     li = News.objects.all()
     return render(request,'home.html',{'li':li})

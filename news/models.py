@@ -18,5 +18,7 @@ class personDetails(models.Model):
 	phonenumber=models.CharField(max_length=10, null=True, blank=True)
 	password = models.CharField(max_length=50,null=True, blank=True)
 
+	 
+
 	def __str__(self):
 		return '%s' %(self.name)
